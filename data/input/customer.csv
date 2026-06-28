@@ -1,0 +1,8 @@
+customer_id,name,gender,birth_date,province_code,amount
+001, Nguyen Van A ,M,01/01/1995,01,100000
+002, tran thi b,F,15/05/1998,79,250000
+003,,M,20/09/2000,48,300000
+,Le Van D,M,10/10/1999,01,150000
+004,Pham Van E,M,11/11/2001,99,120000
+005,Hoang Thi F,F,05/12/1997,79,500000
+006, Do Van G ,M,31/02/1996,01,70000

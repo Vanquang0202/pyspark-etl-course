@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customers>
+  <customer>
+    <customer_id>001</customer_id>
+    <name>Nguyen Van A</name>
+    <age>30</age>
+  </customer>
+  <customer>
+    <customer_id>002</customer_id>
+    <name>Tran Thi B</name>
+    <age>25</age>
+  </customer>
+</customers>

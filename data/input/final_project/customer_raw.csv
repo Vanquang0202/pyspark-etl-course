@@ -1,0 +1,13 @@
+customer_id,name,gender,birth_date,province_code,amount
+001, Nguyen Van A ,M,01/01/1995,01,100000
+002,tran thi b,F,15/05/1998,79,750000
+003,LE VAN C,M,20/09/2000,48,1500000
+004,Pham Van D,M,10/10/1999,01,abc
+005,Hoang Thi E,F,11/11/2001,79,-50000
+006, Do Van F ,M,31/02/1996,01,70000
+,Le Thi G,F,05/12/1997,79,500000
+008,   ,M,01/03/1994,48,300000
+009,Tran Van H,M,02/04/1993,,200000
+010,Nguyen Thi I,F,03/05/1992,99,900000
+011,  lE thI k  ,F,04/06/1991,01,450000
+012,do VAN l,M,05/07/1990,79,500000

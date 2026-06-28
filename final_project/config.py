@@ -1,0 +1,13 @@
+from shared.path_utils import DATA_INPUT, DATA_OUTPUT
+
+
+FINAL_PROJECT_INPUT = DATA_INPUT / "final_project"
+CUSTOMER_RAW_PATH = FINAL_PROJECT_INPUT / "customer_raw.csv"
+FALLBACK_CUSTOMER_PATH = DATA_INPUT / "customer.csv"
+PROVINCE_PATH = DATA_INPUT / "province.csv"
+
+FINAL_PROJECT_OUTPUT = DATA_OUTPUT / "final_project"
+VALID_CUSTOMERS_PATH = FINAL_PROJECT_OUTPUT / "valid_customers_parquet"
+INVALID_CUSTOMERS_PATH = FINAL_PROJECT_OUTPUT / "invalid_customers_csv"
+PROVINCE_SEGMENT_REPORT_PATH = FINAL_PROJECT_OUTPUT / "province_segment_report_csv"
+ETL_SUMMARY_PATH = FINAL_PROJECT_OUTPUT / "etl_summary_csv"
