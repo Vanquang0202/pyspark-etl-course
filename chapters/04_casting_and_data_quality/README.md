@@ -12,7 +12,7 @@ Sau chương này, bạn có thể:
 
 ## Vì sao dữ liệu nguồn thường là string?
 
-CSV chỉ lưu nội dung dạng text và không chứa schema chặt chẽ. API cũng thường trả dữ liệu qua JSON, trong đó số hoặc ngày tháng có thể được biểu diễn bằng chuỗi. Ví dụ, `"100000.50"` nhìn giống số tiền và `"01/01/1995"` nhìn giống ngày, nhưng Spark không nên tự giả định kiểu dữ liệu nếu hợp đồng nguồn chưa rõ ràng.
+CSV chỉ lưu nội dung dạng text và không có schema chặt chẽ. API cũng thường trả dữ liệu qua JSON, trong đó số hoặc ngày tháng có thể được biểu diễn bằng chuỗi. Ví dụ, `"100000.50"` nhìn giống số tiền và `"01/01/1995"` nhìn giống ngày, nhưng Spark không nên tự giả định kiểu dữ liệu nếu hợp đồng nguồn chưa rõ ràng.
 
 Đọc dữ liệu nguồn dưới dạng string trước giúp ta giữ nguyên giá trị gốc để kiểm tra. Sau đó ETL mới cast sang kiểu đích rõ ràng:
 

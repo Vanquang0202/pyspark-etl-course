@@ -1,16 +1,16 @@
 # Chapter 03 - Complex Data Types
 
-## Muc tieu
+## Mục tiêu
 
-Chuong nay bam theo phan Complex Data Types trong PySpark Tour of Types:
+Chương này bám theo phần Complex Data Types trong PySpark Tour of Types:
 
-- `ArrayType`: mot cot chua nhieu gia tri cung kieu.
-- Nested `StructType`: mot cot chua mot record co cau truc rieng.
-- `MapType`: mot cot chua cac cap key-value.
+- `ArrayType`: một cột chứa nhiều giá trị cùng kiểu.
+- Nested `StructType`: một cột chứa một record có cấu trúc riêng.
+- `MapType`: một cột chứa các cặp key-value.
 
-Vi du chinh la customer co nhieu dia chi va mot tap preferences linh dong.
+Ví dụ chính là customer có nhiều địa chỉ và một tập preferences linh động.
 
-## Cau truc vi du
+## Cấu trúc ví dụ
 
 ```text
 customer_id: string
@@ -23,18 +23,18 @@ addresses: array
 preferences: map<string, string>
 ```
 
-Complex types phu hop voi JSON va du lieu long nhau. Tuy nhien, khong nen dua moi thu vao mot cot phuc tap neu cac cot phang de query va bao tri hon.
+Complex types phù hợp với JSON và dữ liệu lồng nhau. Tuy nhiên, không nên đưa mọi thứ vào một cột phức tạp nếu các cột phẳng dễ query và bảo trì hơn.
 
-## Chay
+## Chạy
 
 ```powershell
 python chapters/03_complex_data_types/demo.py
 python chapters/03_complex_data_types/exercise.py
 ```
 
-## Bai tap
+## Bài tập
 
-File `exercise.py` tao employee co danh sach skills, contact dang struct va metadata dang map. Hay them mot employee va truy cap tung field long nhau bang `select()`.
+File `exercise.py` tạo employee có danh sách skills, contact dạng struct và metadata dạng map. Hãy thêm một employee và truy cập từng field lồng nhau bằng `select()`.
 
 ## Quick Notes
 

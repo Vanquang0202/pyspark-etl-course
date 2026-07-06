@@ -1,37 +1,37 @@
 # Chapter 05 - Semi-Structured Data
 
-## Muc tieu
+## Mục tiêu
 
-Chuong nay bam theo phan Semi-Structured Data Processing trong PySpark Tour of Types:
+Chương này bám theo phần Semi-Structured Data Processing trong PySpark Tour of Types:
 
-- Doc file JSON bang `spark.read.json()`.
-- Parse chuoi JSON bang `from_json()` va explicit schema.
-- Chuyen struct/map thanh chuoi JSON bang `to_json()`.
-- Doc XML bang data source `xml` co san tu Spark 4.0.
-- Lam quen voi `VARIANT`, `try_parse_json()` va `try_variant_get()` trong Spark 4.
+- Đọc file JSON bằng `spark.read.json()`.
+- Parse chuỗi JSON bằng `from_json()` và explicit schema.
+- Chuyển struct/map thành chuỗi JSON bằng `to_json()`.
+- Đọc XML bằng data source `xml` có sẵn từ Spark 4.0.
+- Làm quen với `VARIANT`, `try_parse_json()` và `try_variant_get()` trong Spark 4.
 
-## Du lieu mau
+## Dữ liệu mẫu
 
-- `data/input/customer_profiles.json`: JSON Lines, moi dong la mot object.
-- `data/input/customer_profiles.xml`: root `customers`, moi record co tag `customer`.
+- `data/input/customer_profiles.json`: JSON Lines, mỗi dòng là một object.
+- `data/input/customer_profiles.xml`: root `customers`, mỗi record có tag `customer`.
 
-## Gioi han va luu y
+## Giới hạn và lưu ý
 
-- XML data source trong demo nay yeu cau Spark 4.0 tro len. Cac ban Spark cu co the can package `spark-xml` ben ngoai.
-- VARIANT la tinh nang Spark 4.0. Demo su dung `try_parse_json` de gia tri JSON khong hop le tro thanh null thay vi lam dung job.
-- Khong phai he thong dich nao cung ho tro VARIANT. Can kiem tra compatibility truoc khi dung trong pipeline thuc te.
-- Tren Windows local, cac phan nay chay bang JVM/Python cua project. Neu XML hoac VARIANT loi, hay kiem tra lai `pyspark==4.0.1` truoc khi them package ben ngoai.
+- XML data source trong demo này yêu cầu Spark 4.0 trở lên. Các bản Spark cũ có thể cần package `spark-xml` bên ngoài.
+- VARIANT là tính năng Spark 4.0. Demo sử dụng `try_parse_json` để giá trị JSON không hợp lệ trở thành null thay vì làm dừng job.
+- Không phải hệ thống đích nào cũng hỗ trợ VARIANT. Cần kiểm tra compatibility trước khi dùng trong pipeline thực tế.
+- Trên Windows local, các phần này chạy bằng JVM/Python của project. Nếu XML hoặc VARIANT lỗi, hãy kiểm tra lại `pyspark==4.0.1` trước khi thêm package bên ngoài.
 
-## Chay
+## Chạy
 
 ```powershell
 python chapters/05_semi_structured_data/demo.py
 python chapters/05_semi_structured_data/exercise.py
 ```
 
-## Bai tap
+## Bài tập
 
-`exercise.py` parse mot cot JSON chua thong tin order. Hay them mot record loi va quan sat `from_json()` tra ve null nhu the nao.
+`exercise.py` parse một cột JSON chứa thông tin order. Hãy thêm một record lỗi và quan sát `from_json()` trả về null như thế nào.
 
 ## Quick Notes
 

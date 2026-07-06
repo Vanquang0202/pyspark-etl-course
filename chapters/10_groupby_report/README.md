@@ -23,7 +23,7 @@ df.groupBy("province_name").agg(
 )
 ```
 
-Aggregation thường làm giảm số dòng so với input vì nhiều record nguồn được gom lại thành một dòng report.
+Aggregation thường làm giảm số dòng so với input vì nhiều record nguồn được gom thành một dòng report.
 
 ## Liên hệ ETL thực tế
 

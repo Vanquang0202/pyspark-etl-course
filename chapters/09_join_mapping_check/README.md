@@ -25,7 +25,7 @@ Trong chapter này:
 
 ## Liên hệ ETL thực tế
 
-ETL mapping danh mục thường dùng `left join` vì không nên làm mất record nguồn khi master data bị thiếu hoặc code nguồn bị sai. Thay vào đó, job nên giữ record và đánh dấu lỗi mapping.
+ETL mapping danh mục thường dùng `left join` vì không nên làm mất record nguồn khi master data bị thiếu hoặc code nguồn bị sai. Thay vào đó, job nên giữ record lại và đánh dấu lỗi mapping.
 
 Các record trong `unmapped_df` thường được đưa vào:
 

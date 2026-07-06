@@ -15,7 +15,7 @@ Sau chương này, bạn có thể:
 
 ## Kiến thức chính
 
-Data manipulation là nhóm thao tác biến đổi dữ liệu sau khi đọc source. Trong chapter này, dữ liệu customer được chuẩn hóa qua các bước:
+Data manipulation là nhóm thao tác biến đổi dữ liệu sau khi đọc source. Trong chapter này, dữ liệu customer được chuẩn hóa qua các bước chính:
 
 - Trim khoảng trắng trong tên khách hàng.
 - Chuẩn hóa `province_code`.

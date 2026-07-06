@@ -1,0 +1,4 @@
+transaction_id,customer_id,transaction_date,amount
+S001,001,2026-03-01,100000
+S002,002,2026-03-01,250000
+S003,005,2026-03-02,500000

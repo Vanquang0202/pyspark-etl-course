@@ -1,32 +1,32 @@
 # Chapter 06 - Python Package Management
 
-## Muc tieu
+## Mục tiêu
 
-Day la chuong ve package va distribute Python code, khong phai chuong ETL transform.
+Đây là chương về package và distribute Python code, không phải chương ETL transform.
 
-Theo tai lieu Spark 4.0.1, khi job chay tren cluster, custom code va dependency phai co tren cac executor. PySpark native features co the gui file `.py`, package `.zip` hoac `.egg` bang:
+Theo tài liệu Spark 4.0.1, khi job chạy trên cluster, custom code và dependency phải có trên các executor. PySpark native features có thể gửi file `.py`, package `.zip` hoặc `.egg` bằng:
 
 - Config `spark.submit.pyFiles`.
-- Tham so `spark-submit --py-files`.
-- `SparkContext.addPyFile()` sau khi SparkContext da khoi dong.
+- Tham số `spark-submit --py-files`.
+- `SparkContext.addPyFile()` sau khi SparkContext đã khởi động.
 
-Native features khong gui duoc Wheel va khong phu hop voi dependency co native code. Khi do can can nhac Conda, `venv-pack`, PEX hoac container image tuy cluster.
+Native features không gửi được Wheel và không phù hợp với dependency có native code. Khi đó cần cân nhắc Conda, `venv-pack`, PEX hoặc container image tùy cluster.
 
-## Project hien tai
+## Project hiện tại
 
-- `shared/spark_utils.py`: tao SparkSession, chon Python driver/worker va cau hinh local Spark.
-- `shared/path_utils.py`: tinh project root va duong dan data dung chung.
-- `requirements.txt`: khoa cac Python dependencies cua project.
-- `.venv/`: moi truong Python 3.11 rieng cua project, khong commit Git.
+- `shared/spark_utils.py`: tạo SparkSession, chọn Python driver/worker và cấu hình local Spark.
+- `shared/path_utils.py`: tính project root và đường dẫn data dùng chung.
+- `requirements.txt`: khóa các Python dependencies của project.
+- `.venv/`: môi trường Python 3.11 riêng của project, không commit Git.
 - `PYSPARK_PYTHON`: Python executable cho worker/executor.
-- `PYSPARK_DRIVER_PYTHON`: Python executable cho driver trong cach chay local hien tai.
+- `PYSPARK_DRIVER_PYTHON`: Python executable cho driver trong cách chạy local hiện tại.
 
-`.venv` local khong tu dong duoc gui len cluster. Tren YARN/Kubernetes cluster mode, tai lieu canh bao khong set `PYSPARK_DRIVER_PYTHON` giong cach chay local.
+`.venv` local không tự động được gửi lên cluster. Trên YARN/Kubernetes cluster mode, tài liệu cảnh báo không set `PYSPARK_DRIVER_PYTHON` giống cách chạy local.
 
-## Vi du submit
+## Ví dụ submit
 
 ```powershell
-# Gui mot Python file/package zip khi submit job
+# Gửi một Python file/package zip khi submit job
 spark-submit --py-files shared_code.zip app.py
 ```
 
@@ -40,9 +40,9 @@ spark = (
 spark.sparkContext.addPyFile("shared_code.zip")
 ```
 
-Demo dung `addPyFile()` voi mot file `.py` local. Day chi la minh hoa API; loi ich quan trong nhat xuat hien khi driver va executor nam tren cac may khac nhau.
+Demo dùng `addPyFile()` với một file `.py` local. Đây chỉ là minh họa API; lợi ích quan trọng nhất xuất hiện khi driver và executor nằm trên các máy khác nhau.
 
-## Chay
+## Chạy
 
 ```powershell
 python chapters/06_python_package_management/demo.py

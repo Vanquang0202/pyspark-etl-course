@@ -27,24 +27,24 @@ python chapters/07_read_write_files/exercise.py
 
 ## Windows: winutils.exe khi ghi Parquet
 
-Tren Windows, doc CSV va cac action nhu `show()`, `printSchema()`, `count()` co the thanh cong nhung buoc ghi Parquet van fail neu Hadoop khong tim thay `winutils.exe`.
+Trên Windows, đọc CSV và các action như `show()`, `printSchema()`, `count()` có thể thành công nhưng bước ghi Parquet vẫn fail nếu Hadoop không tìm thấy `winutils.exe`.
 
-Project PySpark 4.0.1 hien dong kem Hadoop client 3.4.1. Hay dung `winutils.exe` tuong thich Hadoop 3.4.x tu nguon tin cay, sau do dat file tai:
+Project PySpark 4.0.1 hiện đóng kèm Hadoop client 3.4.1. Hãy dùng `winutils.exe` tương thích Hadoop 3.4.x từ nguồn tin cậy, sau đó đặt file tại:
 
 ```text
 C:\hadoop\bin\winutils.exe
 ```
 
-Project khong tu dong tai executable. Khong tao file rong mang ten `winutils.exe`; can dung binary Windows thuc da duoc PM/doi ha tang phe duyet. Nen quet antivirus va doi chieu checksum theo quy trinh cong ty truoc khi copy.
+Project không tự động tải executable. Không tạo file rỗng mang tên `winutils.exe`; cần dùng binary Windows thật đã được PM/đội hạ tầng phê duyệt. Nên quét antivirus và đối chiếu checksum theo quy trình công ty trước khi copy.
 
-Tao thu muc va copy file:
+Tạo thư mục và copy file:
 
 ```powershell
 New-Item -ItemType Directory -Force C:\hadoop\bin
 Copy-Item C:\Downloads\winutils.exe C:\hadoop\bin\winutils.exe
 ```
 
-Set bien cho terminal hien tai:
+Set biến cho terminal hiện tại:
 
 ```powershell
 $env:HADOOP_HOME = "C:\hadoop"
@@ -52,7 +52,7 @@ ${env:hadoop.home.dir} = "C:\hadoop"
 $env:Path = "C:\hadoop\bin;$env:Path"
 ```
 
-Set vinh vien cho user:
+Set vĩnh viễn cho user:
 
 ```powershell
 [Environment]::SetEnvironmentVariable("HADOOP_HOME", "C:\hadoop", "User")
@@ -68,7 +68,7 @@ if (($userPath -split ";") -notcontains "C:\hadoop\bin") {
 }
 ```
 
-Mo PowerShell moi va verify:
+Mở PowerShell mới và verify:
 
 ```powershell
 echo $env:HADOOP_HOME
@@ -77,7 +77,7 @@ Get-Command winutils.exe
 Test-Path C:\hadoop\bin\winutils.exe
 ```
 
-Chay lai bai tap:
+Chạy lại bài tập:
 
 ```powershell
 cd E:\PySpark\pyspark-etl-course
@@ -85,7 +85,7 @@ cd E:\PySpark\pyspark-etl-course
 python chapters/07_read_write_files/exercise.py
 ```
 
-`shared/spark_utils.py` se canh bao ro neu thieu bien moi truong hoac binary. Canh bao khong chu dong dung app; neu ghi Parquet can `winutils.exe`, loi thuc te van duoc Spark bao tai buoc write.
+`shared/spark_utils.py` sẽ cảnh báo rõ nếu thiếu biến môi trường hoặc binary. Cảnh báo không chủ động dừng app; nếu ghi Parquet cần `winutils.exe`, lỗi thực tế vẫn được Spark báo tại bước write.
 
 ## Quick Notes
 

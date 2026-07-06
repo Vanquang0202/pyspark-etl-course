@@ -2,7 +2,7 @@
 
 ## Mục tiêu
 
-Hiểu các khái niệm đầu tiên:
+Hiểu các khái niệm đầu tiên khi làm việc với PySpark:
 
 - SparkSession: điểm bắt đầu của app PySpark.
 - DataFrame: dữ liệu dạng bảng, gồm row và column.

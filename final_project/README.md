@@ -16,7 +16,7 @@ Extract CSV input
 
 Core ETL dùng PySpark DataFrame API để nối lại kiến thức từ các chapter trước.
 
-## Input files
+## File input
 
 Job ưu tiên đọc file raw riêng cho final project:
 
@@ -46,7 +46,7 @@ Bảng danh mục tỉnh:
 data/input/province.csv
 ```
 
-## Output folders
+## Folder output
 
 Tất cả output được ghi vào:
 
@@ -81,7 +81,7 @@ etl_summary_csv/
 14. Tạo report theo `province_name` và `customer_segment`.
 15. Ghi valid, invalid, report và summary ra output.
 
-## Data quality rules
+## Rule data quality
 
 Job lấy lỗi đầu tiên theo thứ tự ưu tiên:
 
@@ -158,6 +158,17 @@ data/output/final_project/<output_name>/part-*.csv
 ```
 
 không phải đọc trực tiếp tên folder như một file CSV đơn.
+
+## Hướng nâng cấp tiếp theo
+
+Các hướng nâng cấp tiếp theo cho final project:
+
+- JDBC read/write để đọc source từ `VSS_ODS` và ghi kết quả sang `VSS_360`.
+- Window function để lấy bản ghi mới nhất theo `customer_id`.
+- Broadcast join cho bảng danh mục nhỏ như `province`.
+- Partition output theo `processing_date` hoặc `province`.
+- Cache `quality_df` nếu DataFrame này được dùng bởi nhiều action.
+- Structured Streaming nếu source là Kafka/event thay vì file batch.
 
 ## Quick Notes
 

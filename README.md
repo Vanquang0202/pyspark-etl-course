@@ -1,6 +1,6 @@
 # PySpark ETL Course - Spark 4.0.1
 
-Project chia bai hoc PySpark thanh tung chapter de de doc, chay, lam exercise va commit Git. Chapter 01 la DataFrame basics da hoan thanh. Chapter 02-06 bam theo PySpark Tour of Types va Python Package Management; Chapter 07-11 la cac ky nang ETL thuc hanh.
+Project chia bai hoc PySpark thanh tung chapter de de doc, chay, lam exercise va commit Git. Chapter 01 la DataFrame basics da hoan thanh. Chapter 02-06 bam theo PySpark Tour of Types va Python Package Management; Chapter 07-11 la cac ky nang ETL thuc hanh; Chapter 12-17 la cac chu de nang cao de mo rong ETL thuc te.
 
 ## Cau truc project
 
@@ -9,8 +9,10 @@ pyspark-etl-course/
 |-- data/
 |   |-- input/
 |   |   |-- customer.csv
+|   |   |-- customer_transactions.csv
 |   |   |-- final_project/customer_raw.csv
 |   |   |-- province.csv
+|   |   |-- streaming_transactions/customer_transactions.csv
 |   |   |-- customer_profiles.json
 |   |   `-- customer_profiles.xml
 |   `-- output/                     # duoc tao khi job ghi ket qua
@@ -25,7 +27,13 @@ pyspark-etl-course/
 |   |-- 08_data_manipulation/
 |   |-- 09_join_mapping_check/
 |   |-- 10_groupby_report/
-|   `-- 11_spark_sql/
+|   |-- 11_spark_sql/
+|   |-- 12_jdbc_read_write_database/
+|   |-- 13_window_functions/
+|   |-- 14_broadcast_join/
+|   |-- 15_partition_repartition_coalesce/
+|   |-- 16_cache_persist/
+|   `-- 17_structured_streaming_basics/
 |-- shared/
 |   |-- spark_utils.py
 |   `-- path_utils.py
@@ -56,6 +64,12 @@ Moi chapter co:
 | 09 Join and Mapping Check | left join va left_anti join |
 | 10 GroupBy and Report | groupBy, count, sum va report |
 | 11 Spark SQL | temp view, SQL join, filter va order |
+| 12 JDBC Read/Write Database | Config JDBC, read/write database, partition read, lien he VSS_ODS/VSS_360 |
+| 13 Window Functions | row_number, rank, dense_rank, lag, lead, sum over partition |
+| 14 Broadcast Join | Join bang lon voi bang danh muc nho, broadcast hint va explain plan |
+| 15 Partition, Repartition, Coalesce | Partition, repartition, coalesce, write partitionBy va part-* files |
+| 16 Cache and Persist | Lazy execution, action, recompute, cache va unpersist |
+| 17 Structured Streaming Basics | readStream, writeStream console, trigger, checkpoint va micro-batch |
 
 ## Moi truong Ubuntu/WSL
 
@@ -126,8 +140,26 @@ python chapters/10_groupby_report/demo.py
 python chapters/10_groupby_report/exercise.py
 python chapters/11_spark_sql/demo.py
 python chapters/11_spark_sql/exercise.py
+python chapters/12_jdbc_read_write_database/demo.py
+python chapters/12_jdbc_read_write_database/exercise.py
+python chapters/13_window_functions/demo.py
+python chapters/13_window_functions/exercise.py
+python chapters/14_broadcast_join/demo.py
+python chapters/14_broadcast_join/exercise.py
+python chapters/15_partition_repartition_coalesce/demo.py
+python chapters/15_partition_repartition_coalesce/exercise.py
+python chapters/16_cache_persist/demo.py
+python chapters/16_cache_persist/exercise.py
+python chapters/17_structured_streaming_basics/demo.py
+python chapters/17_structured_streaming_basics/exercise.py
 python final_project/etl_job.py
 ```
+
+Chapter 12-17 la cac chapter nang cao. Mot so noi dung chi la demo hoc tap:
+
+- Chapter 12 khong ket noi database that neu chua co JDBC driver, database, user va password.
+- Chapter 17 la streaming demo don gian; exercise dung rate source va tu dung sau khoang 10 giay.
+- Khong bat buoc chay het cac chapter nang cao neu moi can hoc concept hoac doc code mau.
 
 ## Git workflow
 

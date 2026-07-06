@@ -12,7 +12,7 @@ Sau chương này, bạn có thể:
 
 ## Kiến thức chính
 
-Spark SQL không phải là một database riêng. Nó là cách viết query SQL chạy trên dữ liệu đang được quản lý bởi `SparkSession`.
+Spark SQL không phải là một database riêng. Đây là cách viết query SQL chạy trên dữ liệu đang được quản lý bởi `SparkSession`.
 
 Temporary view giống bảng tạm:
 
