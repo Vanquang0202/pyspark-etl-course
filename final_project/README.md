@@ -170,6 +170,14 @@ Các hướng nâng cấp tiếp theo cho final project:
 - Cache `quality_df` nếu DataFrame này được dùng bởi nhiều action.
 - Structured Streaming nếu source là Kafka/event thay vì file batch.
 
+## Có thể phát triển tiếp
+
+- Tối ưu performance bằng `explain()` plan và giảm shuffle.
+- Xử lý incremental ETL bằng watermark.
+- Đọc/ghi database thật qua JDBC.
+- Đọc event từ Kafka bằng Structured Streaming.
+- Thêm checkpoint cho streaming job.
+
 ## Quick Notes
 
 ### Bài này học gì?

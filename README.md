@@ -1,6 +1,6 @@
 # PySpark ETL Course - Spark 4.0.1
 
-Project chia bai hoc PySpark thanh tung chapter de de doc, chay, lam exercise va commit Git. Chapter 01 la DataFrame basics da hoan thanh. Chapter 02-06 bam theo PySpark Tour of Types va Python Package Management; Chapter 07-11 la cac ky nang ETL thuc hanh; Chapter 12-17 la cac chu de nang cao de mo rong ETL thuc te.
+Project chia bai hoc PySpark thanh tung chapter de de doc, chay, lam exercise va commit Git. Chapter 01 la DataFrame basics da hoan thanh. Chapter 02-06 bam theo PySpark Tour of Types va Python Package Management; Chapter 07-11 la cac ky nang ETL thuc hanh; Chapter 12-23 la cac chu de nang cao de mo rong ETL thuc te.
 
 ## Cau truc project
 
@@ -33,7 +33,13 @@ pyspark-etl-course/
 |   |-- 14_broadcast_join/
 |   |-- 15_partition_repartition_coalesce/
 |   |-- 16_cache_persist/
-|   `-- 17_structured_streaming_basics/
+|   |-- 17_structured_streaming_basics/
+|   |-- 18_spark_performance_basics/
+|   |-- 19_handling_larger_data/
+|   |-- 20_database_etl_practical_flow/
+|   |-- 21_incremental_etl_watermark/
+|   |-- 22_kafka_streaming_concept/
+|   `-- 23_streaming_etl_with_checkpoint/
 |-- shared/
 |   |-- spark_utils.py
 |   `-- path_utils.py
@@ -70,6 +76,12 @@ Moi chapter co:
 | 15 Partition, Repartition, Coalesce | Partition, repartition, coalesce, write partitionBy va part-* files |
 | 16 Cache and Persist | Lazy execution, action, recompute, cache va unpersist |
 | 17 Structured Streaming Basics | readStream, writeStream console, trigger, checkpoint va micro-batch |
+| 18 Spark Performance Basics | Lazy execution, transformation/action, explain plan va shuffle |
+| 19 Handling Larger Data | Tao du lieu lon bang range, filter/select som va kiem soat partition |
+| 20 Database ETL Practical Flow | Mo phong flow doc source DB, transform, validate va ghi target DB |
+| 21 Incremental ETL and Watermark | Full load, incremental load, last_watermark va new_watermark |
+| 22 Kafka Streaming Concept | Topic, event, key/value, offset, checkpoint va config Kafka mau |
+| 23 Streaming ETL with Checkpoint | readStream, transform, writeStream, trigger va checkpointLocation |
 
 ## Moi truong Ubuntu/WSL
 
@@ -152,13 +164,28 @@ python chapters/16_cache_persist/demo.py
 python chapters/16_cache_persist/exercise.py
 python chapters/17_structured_streaming_basics/demo.py
 python chapters/17_structured_streaming_basics/exercise.py
+python chapters/18_spark_performance_basics/demo.py
+python chapters/18_spark_performance_basics/exercise.py
+python chapters/19_handling_larger_data/demo.py
+python chapters/19_handling_larger_data/exercise.py
+python chapters/20_database_etl_practical_flow/demo.py
+python chapters/20_database_etl_practical_flow/exercise.py
+python chapters/21_incremental_etl_watermark/demo.py
+python chapters/21_incremental_etl_watermark/exercise.py
+python chapters/22_kafka_streaming_concept/demo.py
+python chapters/22_kafka_streaming_concept/exercise.py
+python chapters/23_streaming_etl_with_checkpoint/demo.py
+python chapters/23_streaming_etl_with_checkpoint/exercise.py
 python final_project/etl_job.py
 ```
 
-Chapter 12-17 la cac chapter nang cao. Mot so noi dung chi la demo hoc tap:
+Chapter 12-23 la cac chapter nang cao. Mot so noi dung chi la demo hoc tap:
 
 - Chapter 12 khong ket noi database that neu chua co JDBC driver, database, user va password.
 - Chapter 17 la streaming demo don gian; exercise dung rate source va tu dung sau khoang 10 giay.
+- Chapter 20 mo phong database ETL, khong bat buoc ket noi DB that.
+- Chapter 22 la concept Kafka, chua can Kafka server that.
+- Chapter 23 dung rate source va checkpoint demo cho streaming local.
 - Khong bat buoc chay het cac chapter nang cao neu moi can hoc concept hoac doc code mau.
 
 ## Git workflow

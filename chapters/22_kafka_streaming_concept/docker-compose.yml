@@ -1,0 +1,37 @@
+services:
+  redpanda:
+    image: docker.redpanda.com/redpandadata/redpanda:v24.3.5
+    container_name: chapter22-redpanda
+    command:
+      - redpanda
+      - start
+      - --mode
+      - dev-container
+      - --overprovisioned
+      - --smp
+      - "1"
+      - --memory
+      - 512M
+      - --reserve-memory
+      - 0M
+      - --node-id
+      - "0"
+      - --check=false
+      - --kafka-addr
+      - internal://0.0.0.0:9092,external://0.0.0.0:19092
+      - --advertise-kafka-addr
+      - internal://redpanda:9092,external://localhost:9092
+    ports:
+      - "9092:19092"
+      - "9644:9644"
+
+  create-topic:
+    image: docker.redpanda.com/redpandadata/redpanda:v24.3.5
+    depends_on:
+      - redpanda
+    entrypoint: ["/bin/sh", "-c"]
+    command: >
+      until rpk cluster info --brokers redpanda:9092 >/dev/null 2>&1;
+      do sleep 1;
+      done;
+      rpk topic create customer-events --brokers redpanda:9092 || true
