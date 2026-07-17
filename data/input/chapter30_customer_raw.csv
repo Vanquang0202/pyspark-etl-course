@@ -1,0 +1,9 @@
+customer_id,customer_name,birth_date,province_code,amount
+C001, nguyen van an ,01/01/1995,01,100000
+C002,tran thi binh,15/05/1998,79,250000
+C003,le van cuong,20/09/2000,48,300000
+C003,le van cuong duplicate,20/09/2000,48,300000
+C004,pham van dung,31/02/1996,01,120000
+C005,hoang thi em,05/12/1997,99,500000
+,missing id,10/10/1999,01,150000
+C007,negative amount,11/11/2001,79,-10

@@ -1,6 +1,6 @@
 # PySpark ETL Course - Spark 4.0.1
 
-Project chia bai hoc PySpark thanh tung chapter de de doc, chay, lam exercise va commit Git. Chapter 01 la DataFrame basics da hoan thanh. Chapter 02-06 bam theo PySpark Tour of Types va Python Package Management; Chapter 07-11 la cac ky nang ETL thuc hanh; Chapter 12-23 la cac chu de nang cao de mo rong ETL thuc te.
+Project chia bai hoc PySpark thanh tung chapter de de doc, chay, lam exercise va commit Git. Chapter 01 la DataFrame basics da hoan thanh. Chapter 02-06 bam theo PySpark Tour of Types va Python Package Management; Chapter 07-11 la cac ky nang ETL thuc hanh; Chapter 12-30 la cac chu de nang cao de mo rong ETL thuc te.
 
 ## Cau truc project
 
@@ -8,6 +8,7 @@ Project chia bai hoc PySpark thanh tung chapter de de doc, chay, lam exercise va
 pyspark-etl-course/
 |-- data/
 |   |-- input/
+|   |   |-- chapter30_customer_raw.csv
 |   |   |-- customer.csv
 |   |   |-- customer_transactions.csv
 |   |   |-- final_project/customer_raw.csv
@@ -39,7 +40,14 @@ pyspark-etl-course/
 |   |-- 20_database_etl_practical_flow/
 |   |-- 21_incremental_etl_watermark/
 |   |-- 22_kafka_streaming_concept/
-|   `-- 23_streaming_etl_with_checkpoint/
+|   |-- 23_streaming_etl_with_checkpoint/
+|   |-- 24_pyspark_unit_testing/
+|   |-- 25_logging_error_handling/
+|   |-- 26_config_driven_etl/
+|   |-- 27_advanced_data_quality_rules/
+|   |-- 28_schema_evolution/
+|   |-- 29_upsert_scd_concept/
+|   `-- 30_mini_capstone_etl_project/
 |-- shared/
 |   |-- spark_utils.py
 |   `-- path_utils.py
@@ -82,6 +90,13 @@ Moi chapter co:
 | 21 Incremental ETL and Watermark | Full load, incremental load, last_watermark va new_watermark |
 | 22 Kafka Streaming Concept | Topic, event, key/value, offset, checkpoint va config Kafka mau |
 | 23 Streaming ETL with Checkpoint | readStream, transform, writeStream, trigger va checkpointLocation |
+| 24 PySpark Unit Testing | Test logic ETL bang pytest, SparkSession fixture, clean/cast/validate |
+| 25 Logging and Error Handling | Logging start/end job, record counts, validation errors va try/except |
+| 26 Config Driven ETL | Tach input_path, output_path, run_date va write_mode ra config JSON |
+| 27 Advanced Data Quality Rules | Required fields, valid amount, province code, duplicate va date format |
+| 28 Schema Evolution | Xu ly source them cot, thieu cot va doi kieu du lieu |
+| 29 Upsert and SCD Concept | Mo phong insert/update/upsert va SCD Type 1 bang DataFrame |
+| 30 Mini Capstone ETL Project | Tong hop read, clean, quality rules, join mapping, duplicate va summary |
 
 ## Moi truong Ubuntu/WSL
 
@@ -176,16 +191,34 @@ python chapters/22_kafka_streaming_concept/demo.py
 python chapters/22_kafka_streaming_concept/exercise.py
 python chapters/23_streaming_etl_with_checkpoint/demo.py
 python chapters/23_streaming_etl_with_checkpoint/exercise.py
+pytest chapters/24_pyspark_unit_testing/demo.py
+pytest chapters/24_pyspark_unit_testing/exercise.py
+python chapters/25_logging_error_handling/demo.py
+python chapters/25_logging_error_handling/exercise.py
+python chapters/26_config_driven_etl/demo.py
+python chapters/26_config_driven_etl/exercise.py
+python chapters/27_advanced_data_quality_rules/demo.py
+python chapters/27_advanced_data_quality_rules/exercise.py
+python chapters/28_schema_evolution/demo.py
+python chapters/28_schema_evolution/exercise.py
+python chapters/29_upsert_scd_concept/demo.py
+python chapters/29_upsert_scd_concept/exercise.py
+python chapters/30_mini_capstone_etl_project/demo.py
+python chapters/30_mini_capstone_etl_project/exercise.py
 python final_project/etl_job.py
 ```
 
-Chapter 12-23 la cac chapter nang cao. Mot so noi dung chi la demo hoc tap:
+Chapter 12-30 la cac chapter nang cao. Mot so noi dung chi la demo hoc tap:
 
 - Chapter 12 khong ket noi database that neu chua co JDBC driver, database, user va password.
 - Chapter 17 la streaming demo don gian; exercise dung rate source va tu dung sau khoang 10 giay.
 - Chapter 20 mo phong database ETL, khong bat buoc ket noi DB that.
 - Chapter 22 la concept Kafka, chua can Kafka server that.
 - Chapter 23 dung rate source va checkpoint demo cho streaming local.
+- Chapter 24 chay bang pytest de test logic ETL nho.
+- Chapter 26 doc config JSON va chi in write plan trong demo.
+- Chapter 29 mo phong upsert/SCD bang DataFrame, khong can database that.
+- Chapter 30 la mini capstone va chi show preview trong demo.
 - Khong bat buoc chay het cac chapter nang cao neu moi can hoc concept hoac doc code mau.
 
 ## Git workflow

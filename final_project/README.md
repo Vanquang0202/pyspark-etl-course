@@ -177,6 +177,7 @@ Các hướng nâng cấp tiếp theo cho final project:
 - Đọc/ghi database thật qua JDBC.
 - Đọc event từ Kafka bằng Structured Streaming.
 - Thêm checkpoint cho streaming job.
+- Bổ sung unit test, config-driven ETL và rule data quality nâng cao như các chapter 24-30.
 
 ## Quick Notes
 

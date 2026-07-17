@@ -1,0 +1,6 @@
+{
+  "input_path": "data/input/customer.csv",
+  "output_path": "data/output/chapter26/customers",
+  "run_date": "2026-07-17",
+  "write_mode": "overwrite"
+}
