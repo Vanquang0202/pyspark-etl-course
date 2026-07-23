@@ -178,6 +178,7 @@ Các hướng nâng cấp tiếp theo cho final project:
 - Đọc event từ Kafka bằng Structured Streaming.
 - Thêm checkpoint cho streaming job.
 - Bổ sung unit test, config-driven ETL và rule data quality nâng cao như các chapter 24-30.
+- Bổ sung CLI arguments, environment config, data contract, metrics, retry/idempotent và package hóa như các chapter 31-36.
 
 ## Quick Notes
 

@@ -1,6 +1,6 @@
 # PySpark ETL Course - Spark 4.0.1
 
-Project chia bai hoc PySpark thanh tung chapter de de doc, chay, lam exercise va commit Git. Chapter 01 la DataFrame basics da hoan thanh. Chapter 02-06 bam theo PySpark Tour of Types va Python Package Management; Chapter 07-11 la cac ky nang ETL thuc hanh; Chapter 12-30 la cac chu de nang cao de mo rong ETL thuc te.
+Project chia bai hoc PySpark thanh tung chapter de de doc, chay, lam exercise va commit Git. Chapter 01 la DataFrame basics da hoan thanh. Chapter 02-06 bam theo PySpark Tour of Types va Python Package Management; Chapter 07-11 la cac ky nang ETL thuc hanh; Chapter 12-36 la cac chu de nang cao de mo rong ETL thuc te va production hon.
 
 ## Cau truc project
 
@@ -47,11 +47,21 @@ pyspark-etl-course/
 |   |-- 27_advanced_data_quality_rules/
 |   |-- 28_schema_evolution/
 |   |-- 29_upsert_scd_concept/
-|   `-- 30_mini_capstone_etl_project/
+|   |-- 30_mini_capstone_etl_project/
+|   |-- 31_cli_arguments_etl_job/
+|   |-- 32_environment_config_dev_test_prod/
+|   |-- 33_data_contract_schema_validation/
+|   |-- 34_etl_monitoring_metrics/
+|   |-- 35_retry_idempotent_etl/
+|   `-- 36_packaging_pyspark_project/
 |-- shared/
 |   |-- spark_utils.py
 |   `-- path_utils.py
 |-- final_project/
+|-- projects/
+|   `-- lakehouse_full_flow/
+|-- orchestration/
+|   `-- airflow_local/
 |-- tests/
 |-- requirements.txt
 `-- README.md
@@ -97,6 +107,21 @@ Moi chapter co:
 | 28 Schema Evolution | Xu ly source them cot, thieu cot va doi kieu du lieu |
 | 29 Upsert and SCD Concept | Mo phong insert/update/upsert va SCD Type 1 bang DataFrame |
 | 30 Mini Capstone ETL Project | Tong hop read, clean, quality rules, join mapping, duplicate va summary |
+| 31 CLI Arguments for ETL Job | Truyen input_path, output_path, run_date va write_mode bang argparse |
+| 32 Environment Config Dev Test Prod | Tach config JSON theo moi truong dev, test va prod |
+| 33 Data Contract and Schema Validation | Khai bao expected schema va bao loi khi input thieu cot hoac sai kieu |
+| 34 ETL Monitoring Metrics | Tao metrics total, valid, invalid, duplicate, duration va job_status |
+| 35 Retry and Idempotent ETL | Retry loi tam thoi va ghi output theo run_date de chay lai an toan |
+| 36 Packaging PySpark Project | Tach transform thanh module rieng va main.py dieu phoi job |
+
+## Projects
+
+- `projects/lakehouse_full_flow` - mo phong full flow Data Lakehouse ETL local bang PySpark.
+
+## Orchestration
+
+- `orchestration/airflow_local` - Airflow local dung de quan ly va trigger lakehouse full flow job.
+- Co nhieu DAG demo de hoc full flow, data quality, monitoring va cleanup output local.
 
 ## Moi truong Ubuntu/WSL
 
@@ -205,10 +230,22 @@ python chapters/29_upsert_scd_concept/demo.py
 python chapters/29_upsert_scd_concept/exercise.py
 python chapters/30_mini_capstone_etl_project/demo.py
 python chapters/30_mini_capstone_etl_project/exercise.py
+python chapters/31_cli_arguments_etl_job/demo.py --input-path data/input/customer.csv --output-path data/output/chapter31/customers --run-date 2026-07-20 --write-mode overwrite
+python chapters/31_cli_arguments_etl_job/exercise.py --input-path data/input/customer.csv --output-path data/output/chapter31/exercise --run-date 2026-07-20 --write-mode overwrite
+python chapters/32_environment_config_dev_test_prod/demo.py --env dev
+python chapters/32_environment_config_dev_test_prod/exercise.py --env dev
+python chapters/33_data_contract_schema_validation/demo.py
+python chapters/33_data_contract_schema_validation/exercise.py
+python chapters/34_etl_monitoring_metrics/demo.py
+python chapters/34_etl_monitoring_metrics/exercise.py
+python chapters/35_retry_idempotent_etl/demo.py
+python chapters/35_retry_idempotent_etl/exercise.py
+python chapters/36_packaging_pyspark_project/demo.py
+python chapters/36_packaging_pyspark_project/exercise.py
 python final_project/etl_job.py
 ```
 
-Chapter 12-30 la cac chapter nang cao. Mot so noi dung chi la demo hoc tap:
+Chapter 12-36 la cac chapter nang cao. Mot so noi dung chi la demo hoc tap:
 
 - Chapter 12 khong ket noi database that neu chua co JDBC driver, database, user va password.
 - Chapter 17 la streaming demo don gian; exercise dung rate source va tu dung sau khoang 10 giay.
@@ -219,6 +256,12 @@ Chapter 12-30 la cac chapter nang cao. Mot so noi dung chi la demo hoc tap:
 - Chapter 26 doc config JSON va chi in write plan trong demo.
 - Chapter 29 mo phong upsert/SCD bang DataFrame, khong can database that.
 - Chapter 30 la mini capstone va chi show preview trong demo.
+- Chapter 31 nhan tham so bang CLI va chi in write plan trong demo.
+- Chapter 32 doc config theo dev/test/prod va chi in write plan trong demo.
+- Chapter 33 co tinh demo case schema sai de thay error message ro rang.
+- Chapter 34 tao metrics va ghi file metrics nho neu chay demo/exercise.
+- Chapter 35 demo retry va idempotent write plan theo run_date.
+- Chapter 36 demo cach tach transform thanh package/module rieng.
 - Khong bat buoc chay het cac chapter nang cao neu moi can hoc concept hoac doc code mau.
 
 ## Git workflow

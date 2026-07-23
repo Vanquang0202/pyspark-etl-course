@@ -20,4 +20,5 @@ _SUCCESS
 # IDE / OS
 .idea/
 .vscode/
-.DS_Store
+.DS_Storedata/lakehouse/
+data/lakehouse/

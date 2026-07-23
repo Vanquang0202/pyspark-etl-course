@@ -1,0 +1,6 @@
+customer_id,name,province_code,amount,event_time,source_system
+001, Nguyen Van A ,01,100000,2026-07-20 08:00:00,oracle_customer
+002,tran thi b,79,250000,2026-07-20 08:05:00,oracle_customer
+003,Le Van C,48,-30000,2026-07-20 08:10:00,oracle_customer
+,Pham Thi D,01,150000,2026-07-20 08:15:00,oracle_customer
+005,Hoang Van E,,500000,2026-07-20 08:20:00,oracle_customer
