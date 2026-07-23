@@ -22,3 +22,6 @@ _SUCCESS
 .vscode/
 .DS_Storedata/lakehouse/
 data/lakehouse/
+data/input/generated/
+jars/
+orchestration/airflow_local/logs/

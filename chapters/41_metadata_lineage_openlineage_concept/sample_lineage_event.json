@@ -1,0 +1,10 @@
+{
+  "eventType": "COMPLETE",
+  "job": {"name": "customer_etl"},
+  "run": {"runId": "demo-run-001"},
+  "inputs": [{"name": "raw.customer_events", "schemaFields": ["customer_id", "amount"]}],
+  "outputs": [{"name": "gold.customer_summary", "schemaFields": ["province_code", "total_amount"]}],
+  "startTime": "2026-07-23T00:00:00Z",
+  "endTime": "2026-07-23T00:01:00Z",
+  "status": "SUCCESS"
+}

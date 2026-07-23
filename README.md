@@ -53,7 +53,13 @@ pyspark-etl-course/
 |   |-- 33_data_contract_schema_validation/
 |   |-- 34_etl_monitoring_metrics/
 |   |-- 35_retry_idempotent_etl/
-|   `-- 36_packaging_pyspark_project/
+|   |-- 36_packaging_pyspark_project/
+|   |-- 37_fastapi_serving_layer/
+|   |-- 38_postgres_jdbc_etl_practice/
+|   |-- 39_kafka_streaming_pipeline/
+|   |-- 40_data_generator_for_etl_testing/
+|   |-- 41_metadata_lineage_openlineage_concept/
+|   `-- 42_spark_submit_deployment/
 |-- shared/
 |   |-- spark_utils.py
 |   `-- path_utils.py
@@ -113,6 +119,12 @@ Moi chapter co:
 | 34 ETL Monitoring Metrics | Tao metrics total, valid, invalid, duplicate, duration va job_status |
 | 35 Retry and Idempotent ETL | Retry loi tam thoi va ghi output theo run_date de chay lai an toan |
 | 36 Packaging PySpark Project | Tach transform thanh module rieng va main.py dieu phoi job |
+| 37 API Serving Layer | Mô phỏng API đọc dữ liệu sau ETL bằng HTTP server đơn giản |
+| 38 Postgres JDBC ETL Practice | Đọc, clean và ghi bảng Postgres qua JDBC |
+| 39 Kafka Streaming Pipeline | Producer, topic, Spark Structured Streaming consumer và checkpoint |
+| 40 Data Generator for ETL Testing | Tạo customer event valid/invalid để test ETL |
+| 41 Metadata and Lineage Concept | Mô phỏng lineage event theo job/run/input/output |
+| 42 Spark Submit Deployment | Cách submit Spark job với master, config và argument |
 
 ## Projects
 

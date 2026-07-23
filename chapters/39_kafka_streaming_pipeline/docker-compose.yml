@@ -1,0 +1,6 @@
+services:
+  redpanda:
+    image: redpandadata/redpanda:v24.3.5
+    command: redpanda start --overprovisioned --smp 1 --memory 1G --node-id 0 --check=false
+    ports:
+      - "9092:9092"
